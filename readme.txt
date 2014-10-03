@@ -17,10 +17,10 @@ Can any title on the page.
 * [understandard](https://profiles.wordpress.org/understandard/)
 
 == Installation ==
-A plug-in installation screen is displayed on the WordPress admin panel.
-It installs it in `wp-content/plugins`.
-The plug-in is made effective.
-Open \'Settings\' -> \'Custom Nextpage\' menu.
+* A plug-in installation screen is displayed on the WordPress admin panel.
+* It installs it in `wp-content/plugins`.
+* The plug-in is made effective.
+* Open \'Settings\' -> \'Custom Nextpage\' menu.
 
 == Screenshots ==
 
@@ -30,8 +30,12 @@ Open \'Settings\' -> \'Custom Nextpage\' menu.
 4. Next page appearance
 
 == Frequently Asked Questions ==
+
 Automatically replace the wp_link_pages. To check?
 Or the  Please insert a template.
+```
+<?php if ( function_exists( 'custom_next_page_link_pages' ) ) : custom_next_page_link_pages(); endif; ?>
+```
 
 == Changelog ==
 = 1.0.2 =
