@@ -50,7 +50,6 @@
 			});
 		}
 		$('#reset-css').on( 'click', function() {
-			console.log( code_mirror );
 			$.ajax({
 				type: 'POST',
 				dataType: 'json',

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Custom Nextpage 0.9.8\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/custom-nextpage\n"
 "POT-Creation-Date: 2014-10-03 04:12:45+00:00\n"
-"PO-Revision-Date: 2014-10-03 13:14+0900\n"
+"PO-Revision-Date: 2014-10-03 13:21+0900\n"
 "Last-Translator: Webnist <webnist@webnist.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ja\n"
@@ -131,11 +131,12 @@ msgid "Disable"
 msgstr "無効化"
 
 #: includes/class-admin-menu.php:215
-#, fuzzy
 msgid ""
 "Press ctrl-space to activate autocompletion. <span class=\"button button-"
 "primary\" id=\"reset-css\">Reset</span>"
-msgstr "<span class=”nav-next” id=”gallery-%s”>></span>"
+msgstr ""
+"ctrl-space で自動補完が表示されます。 <span class=\"button button-primary\" "
+"id=\"reset-css\">CSSリセット</span>"
 
 #: includes/tinymce/plugins/customnextpage/langs/langs.php:5
 #: includes/tinymce/plugins/customnextpage/langs/langs.php:6
