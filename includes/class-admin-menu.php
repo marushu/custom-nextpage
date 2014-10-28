@@ -75,7 +75,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 				'custom-next-page-filter',
 				__( 'Automatically replace the wp_link_pages.', $this->domain ),
 				array( &$this, 'check_field' ),
-				$this->plugin_basename ,
+				$this->plugin_basename,
 				'general',
 				array(
 					'name'  => 'custom-next-page[filter]',
@@ -87,7 +87,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-before-text',
 			__( 'Before Text', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[beforetext]',
@@ -98,7 +98,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-after-text',
 			__( 'After Text', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[aftertext]',
@@ -110,7 +110,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-boundary',
 			__( 'The first and last page links displayed.', $this->domain ),
 			array( &$this, 'check_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[show_boundary]',
@@ -122,7 +122,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-adjacent',
 			__( 'Next and previous page links to display.', $this->domain ),
 			array( &$this, 'check_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[show_adjacent]',
@@ -134,7 +134,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-firstpagelink',
 			__( 'Text For First Page', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[firstpagelink]',
@@ -146,7 +146,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-lastpagelink',
 			__( 'Text For Last Page', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[lastpagelink]',
@@ -158,7 +158,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-nextpagelink',
 			__( 'Text For Next Page', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[nextpagelink]',
@@ -170,7 +170,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-previouspagelink',
 			__( 'Text For Previous Page', $this->domain ),
 			array( &$this, 'text_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'general',
 			array(
 				'name'  => 'custom-next-page[previouspagelink]',
@@ -189,7 +189,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-style-type',
 			__( 'Select Style type', $this->domain ),
 			array( &$this, 'select_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'style',
 			array(
 				'name'   => 'custom-next-page[styletype]',
@@ -206,7 +206,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 			'custom-next-page-style',
 			__( 'Style Edit', $this->domain ),
 			array( &$this, 'textarea_field' ),
-			$this->plugin_basename ,
+			$this->plugin_basename,
 			'style',
 			array(
 				'id'    => 'style-editor',
@@ -292,15 +292,16 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 	}
 
 	public function add_custom_whitelist_options_fields() {
-		register_setting( $this->plugin_basename , 'custom-next-page', array( &$this, 'register_setting_check' ) );
-		register_setting( $this->plugin_basename , 'custom-next-page-convert', array( &$this, 'register_setting_convert' ) );
-		register_setting( $this->plugin_basename , 'custom-next-page-initialization', array( &$this, 'register_setting_initialization' ) );
+		register_setting( $this->plugin_basename, 'custom-next-page', array( &$this, 'register_setting_check' ) );
+		register_setting( $this->plugin_basename, 'custom-next-page-convert', array( &$this, 'register_setting_convert' ) );
+		register_setting( $this->plugin_basename, 'custom-next-page-initialization', array( &$this, 'register_setting_initialization' ) );
 	}
 
 	public function register_setting_check( $value ) {
-		$value['filter'] = (int) $value['filter'];
-		$value['style'] = preg_replace( '/(\&lt;(.*)\&gt;)/ism', '', esc_textarea( $value['style'] ) );
-
+		$value['filter']        = (int) $value['filter'];
+		$value['show_boundary'] = (int) $value['show_boundary'];
+		$value['show_adjacent'] = (int) $value['show_adjacent'];
+		$value['style']         = preg_replace( '/(\&lt;(.*)\&gt;)/ism', '', esc_textarea( $value['style'] ) );
 		return $value;
 	}
 
