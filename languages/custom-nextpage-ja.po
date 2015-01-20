@@ -18,7 +18,7 @@ msgstr ""
 #: custom-nextpage.php:50 custom-nextpage.php:63
 #: includes/class-admin-menu.php:316
 msgid "&#171;"
-msgstr "&#187;"
+msgstr "&#171;"
 
 #: custom-nextpage.php:51 custom-nextpage.php:64
 #: includes/class-admin-menu.php:315
