@@ -1,17 +1,17 @@
 === Custom Nextpage ===
 
-Contributors: Webnist,understandard  
-Tags: nextpage multipage  
-Requires at least: 3.6  
-Tested up to: 4.0  
-Version: 1.0.3  
-License: GPLv2 or later  
+Contributors: Webnist,understandard
+Tags: nextpage multipage
+Requires at least: 3.6
+Tested up to: 4.0
+Version: 1.0.4
+License: GPLv2 or later
 
 MultiPage is a customizable plugin
 
 == Description ==
 
-MultiPage is a customizable plugin.  
+MultiPage is a customizable plugin.
 Can any title on the page.
 
 = Contributors =
@@ -35,16 +35,18 @@ Can any title on the page.
 
 == Frequently Asked Questions ==
 
-Automatically replace the wp_link_pages. To check?  
-Or the  Please insert a template.  
+Automatically replace the wp_link_pages. To check?
+Or the  Please insert a template.
 ```
 <?php if ( function_exists( 'custom_next_page_link_pages' ) ) : custom_next_page_link_pages(); endif; ?>
 ```
 
 == Changelog ==
+= 1.0.4 =
+ja languages file update
 
 = 1.0.3 =
-Fixed bug: cannot save  
+Fixed bug: cannot save
 
 = 1.0.2 =
 Clean style sheet
