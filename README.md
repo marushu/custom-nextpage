@@ -4,7 +4,7 @@ Contributors: Webnist,understandard
 Tags: nextpage multipage
 Requires at least: 3.6
 Tested up to: 4.0
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv2 or later
 
 MultiPage is a customizable plugin
@@ -42,6 +42,10 @@ Or the  Please insert a template.
 ```
 
 == Changelog ==
+
+= 1.0.5 =
+Fixed bug: Processing was enclosed in tags.
+
 = 1.0.4 =
 ja languages file update
 
