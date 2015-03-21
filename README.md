@@ -12,7 +12,7 @@ MultiPage is a customizable plugin
 == Description ==
 
 MultiPage is a customizable plugin.
-Can any title on the page.
+You can add any title on the page.
 
 = Contributors =
 
@@ -30,13 +30,13 @@ Can any title on the page.
 
 1. Short code insertion button
 2. Title insertion form
-3. It looks after you insert
+3. The title after you insert
 4. Next page appearance
 
 == Frequently Asked Questions ==
 
 Automatically replace the wp_link_pages. To check?
-Or the  Please insert a template.
+Please insert a template.
 ```
 <?php if ( function_exists( 'custom_next_page_link_pages' ) ) : custom_next_page_link_pages(); endif; ?>
 ```
