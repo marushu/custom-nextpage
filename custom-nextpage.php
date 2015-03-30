@@ -180,7 +180,7 @@ class CustomNextPage extends CustomNextPageInit {
 			} else{
 				$p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
 			}
-			$paginate = paginate_links(array(
+			$nav_list = paginate_links(array(
 				'base'      => $p_base,
 				'format'    => $p_format,
 				'total'     => $numpages,
@@ -191,15 +191,15 @@ class CustomNextPage extends CustomNextPageInit {
 				'prev_next' => false,
 				'type'      => 'array',
 			));
-			foreach ( $paginate as $page ) {
-				if ( stristr( $page, 'span' ) ) {
-					if ( stristr( $page, 'dots' ) ) {
-						$output .= '<li class="numpages dots"><span>' . strip_tags( $page ) . '</span></li>';
+			foreach ( $nav_list as $nav ) {
+				if ( stristr( $nav, 'span' ) ) {
+					if ( stristr( $nav, 'dots' ) ) {
+						$output .= '<li class="numpages dots"><span>' . strip_tags( $nav ) . '</span></li>';
 					} else {
-						$output .= '<li class="numpages current"><span>' . strip_tags( $page ) . '</span></li>';
+						$output .= '<li class="numpages current"><span>' . strip_tags( $nav ) . '</span></li>';
 					}
 				} else {
-					$output .= '<li class="numpages">' . $page . '</li>';
+					$output .= '<li class="numpages">' . $nav . '</li>';
 				}
 			}
 
