@@ -4,7 +4,7 @@ Contributors: Webnist,understandard
 Tags: nextpage multipage
 Requires at least: 3.6
 Tested up to: 4.0
-Version: 1.0.5
+Version: 1.0.6
 License: GPLv2 or later
 
 MultiPage is a customizable plugin
@@ -42,6 +42,9 @@ Please insert a template.
 ```
 
 == Changelog ==
+
+= 1.0.6 =
+Fixed bug: Change WP_PLUGIN_URL to WP_PLUGIN_DIR for file_get_contents
 
 = 1.0.5 =
 Fixed bug: Processing was enclosed in tags.
