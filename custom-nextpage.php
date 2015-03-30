@@ -39,7 +39,7 @@ class CustomNextPageInit {
 		$this->version         = $data['ver'];
 		$this->domain          = $data['domain'];
 		$this->langs           = $data['langs'];
-		$this->css             = file_get_contents( CUSTOM_NEXTPAGE_URL . '/css/custom-nextpage-style.css' );
+		$this->css             = strip_tags( file_get_contents( CUSTOM_NEXTPAGE_DIR . '/css/custom-nextpage-style.css' ) );
 
 		$this->default_options = array(
 			'filter'           => '',
