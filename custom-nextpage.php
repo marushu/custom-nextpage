@@ -4,7 +4,7 @@ Plugin Name: Custom Nextpage
 Plugin URI: http://wordpress.org/plugins/custom-nextpage/
 Description: MultiPage is a customizable plugin. Can any title on the page.
 Author: Webnist
-Version: 1.0.6
+Version: 1.1.0
 Author URI: http://profiles.wordpress.org/webnist
 License: GPLv2 or later
 Text Domain: custom-nextpage
@@ -45,6 +45,9 @@ class CustomNextPageInit {
 			'filter'           => '',
 			'beforetext'       => '',
 			'aftertext'        => '',
+			'show_all'         => 1,
+			'end_size'         => 1,
+			'mid_size'         => 2,
 			'show_boundary'    => 1,
 			'show_adjacent'    => 1,
 			'firstpagelink'    => __( '&#171;', 'custom-nextpage' ),
@@ -58,6 +61,9 @@ class CustomNextPageInit {
 		$this->filter           = $this->options['filter'] ? $this->options['filter'] : '';
 		$this->beforetext       = $this->options['beforetext'] ? $this->options['beforetext'] : '';
 		$this->aftertext        = $this->options['aftertext'] ? $this->options['aftertext'] : '';
+		$this->show_all         = $this->options['show_all'] ? $this->options['show_all'] : '';
+		$this->end_size         = $this->options['end_size'] ? $this->options['end_size'] : 1;
+		$this->mid_size         = $this->options['mid_size'] ? $this->options['mid_size'] : 2;
 		$this->show_boundary    = $this->options['show_boundary'] ? $this->options['show_boundary'] : '';
 		$this->show_adjacent    = $this->options['show_adjacent'] ? $this->options['show_adjacent'] : '';
 		$this->firstpagelink    = $this->options['firstpagelink'] ? $this->options['firstpagelink'] : __( '&#171;', 'custom-nextpage' );
@@ -139,9 +145,12 @@ class CustomNextPage extends CustomNextPageInit {
 		global $page, $numpages, $multipage, $pagenow;
 		$output = '';
 		if ( $multipage ) {
-			$show_boundary     = esc_html( apply_filters( 'custom_next_page_show_boundary', $this->show_boundary ) );
-			$show_adjacent     = esc_html( apply_filters( 'custom_next_page_show_adjacent', $this->show_adjacent ) );
-			$firstpagelink     = esc_html( apply_filters( 'custom_next_page_firstpagelink', $this->firstpagelink ) );
+			$show_all         = (boolean) $this->show_all;
+			$end_size         = $this->end_size;
+			$mid_size         = $this->mid_size;
+			$show_boundary    = esc_html( apply_filters( 'custom_next_page_show_boundary', $this->show_boundary ) );
+			$show_adjacent    = esc_html( apply_filters( 'custom_next_page_show_adjacent', $this->show_adjacent ) );
+			$firstpagelink    = esc_html( apply_filters( 'custom_next_page_firstpagelink', $this->firstpagelink ) );
 			$lastpagelink     = esc_html( apply_filters( 'custom_next_page_lastpagelink', $this->lastpagelink ) );
 			$nextpagelink     = esc_html( apply_filters( 'custom_next_page_nextpagelink', $this->nextpagelink ) );
 			$previouspagelink = esc_html( apply_filters( 'custom_next_page_previouspagelink', $this->previouspagelink ) );
@@ -161,14 +170,39 @@ class CustomNextPage extends CustomNextPageInit {
 				if ( $show_adjacent )
 					$output .= '<li class="previous">' . $link . $previouspagelink . '</a></li>';
 			}
-			for ( $i = 1; $i <= $numpages; $i++ ) {
-				if ( $page === $i ) {
-					$link  = '<li class="numpages current"><span>' . $i . '</span></li>';
-				} else {
-					$link  = '<li class="numpages">' . _wp_link_page( $i ) . $i . '</a></li>';
-				}
-				$output .= $link;
+
+			$p_base   = get_permalink();
+			$p_format = '%#%';
+
+			if($word = strpos($p_base, '?')){
+				$p_base = get_option(home).(substr(get_option(home), -1 ,1) === '/' ? '' : '/')
+					.'%_%'.substr($p_base, $word);
+			} else{
+				$p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
 			}
+			$paginate = paginate_links(array(
+				'base'      => $p_base,
+				'format'    => $p_format,
+				'total'     => $numpages,
+				'current'   => ($page ? $page : 1),
+				'show_all'  => $show_all,
+				'end_size'  => $end_size,
+				'mid_size'  => $mid_size,
+				'prev_next' => false,
+				'type'      => 'array',
+			));
+			foreach ( $paginate as $page ) {
+				if ( stristr( $page, 'span' ) ) {
+					if ( stristr( $page, 'dots' ) ) {
+						$output .= '<li class="numpages dots"><span>' . strip_tags( $page ) . '</span></li>';
+					} else {
+						$output .= '<li class="numpages current"><span>' . strip_tags( $page ) . '</span></li>';
+					}
+				} else {
+					$output .= '<li class="numpages">' . $page . '</li>';
+				}
+			}
+
 			$i = $page + 1;
 			if ( $i <= $numpages ) {
 				$last_link = _wp_link_page( $numpages );

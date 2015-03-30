@@ -107,6 +107,43 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 		);
 
 		add_settings_field(
+			'custom-next-page-show_all',
+			__( 'Show all numbers', $this->domain ),
+			array( &$this, 'check_field' ),
+			$this->plugin_basename,
+			'general',
+			array(
+				'name'  => 'custom-next-page[show_all]',
+				'value' => $this->show_all,
+			)
+		);
+		add_settings_field(
+			'custom-next-page-end_size',
+			__( 'End size', $this->domain ),
+			array( &$this, 'text_field' ),
+			$this->plugin_basename,
+			'general',
+			array(
+				'name'  => 'custom-next-page[end_size]',
+				'value' => $this->end_size,
+				'class' => 'small-text',
+				'desc'  => __( 'How many numbers on either the start and the end list edges.', $this->domain ),
+			)
+		);
+		add_settings_field(
+			'custom-next-page-mid_size',
+			__( 'Mid size', $this->domain ),
+			array( &$this, 'text_field' ),
+			$this->plugin_basename,
+			'general',
+			array(
+				'name'  => 'custom-next-page[mid_size]',
+				'value' => $this->mid_size,
+				'class' => 'small-text',
+				'desc'  => __( 'How many numbers to either side of current page, but not including current page.', $this->domain ),
+			)
+		);
+		add_settings_field(
 			'custom-next-page-boundary',
 			__( 'The first and last page links displayed.', $this->domain ),
 			array( &$this, 'check_field' ),
@@ -222,7 +259,8 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 
 		$id      = ! empty( $id ) ? $id : $name;
 		$desc    = ! empty( $desc ) ? $desc : '';
-		$output  = '<input type="text" name="' . $name .'" id="' . $id .'" class="regular-text" value="' . $value .'" />' . "\n";
+		$class   = ! empty( $class ) ? $class: 'regular-text';
+		$output  = '<input type="text" name="' . $name .'" id="' . $id .'" class="' . $class . '" value="' . $value .'" />' . "\n";
 		if ( $desc )
 			$output .= '<p class="description">' . $desc . '</p>' . "\n";
 
@@ -299,6 +337,9 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 
 	public function register_setting_check( $value ) {
 		$value['filter']        = (int) $value['filter'];
+		$value['show_all']      = (int) $value['show_all'];
+		$value['end_size']      = (int) $value['end_size'];
+		$value['end_size']      = (int) $value['end_size'];
 		$value['show_boundary'] = (int) $value['show_boundary'];
 		$value['show_adjacent'] = (int) $value['show_adjacent'];
 		$value['style']         = preg_replace( '/(\&lt;(.*)\&gt;)/ism', '', esc_textarea( $value['style'] ) );
