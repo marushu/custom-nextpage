@@ -1,32 +1,32 @@
-# Copyright (C) 2014 Custom Nextpage
+# Copyright (C) 2015 Custom Nextpage
 # This file is distributed under the same license as the Custom Nextpage package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Nextpage 1.0.0\n"
+"Project-Id-Version: Custom Nextpage 1.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/custom-nextpage\n"
-"POT-Creation-Date: 2014-10-03 04:12:45+00:00\n"
+"POT-Creation-Date: 2015-03-30 06:27:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: custom-nextpage.php:50 custom-nextpage.php:63
-#: includes/class-admin-menu.php:316
+#: custom-nextpage.php:53 custom-nextpage.php:69
+#: includes/class-admin-menu.php:358
 msgid "&#171;"
 msgstr ""
 
-#: custom-nextpage.php:51 custom-nextpage.php:64
-#: includes/class-admin-menu.php:315
+#: custom-nextpage.php:54 custom-nextpage.php:70
+#: includes/class-admin-menu.php:357
 msgid "&#187;"
 msgstr ""
 
-#: custom-nextpage.php:52 custom-nextpage.php:65
+#: custom-nextpage.php:55 custom-nextpage.php:71
 msgid "&gt;"
 msgstr ""
 
-#: custom-nextpage.php:53 custom-nextpage.php:66
+#: custom-nextpage.php:56 custom-nextpage.php:72
 msgid "&lt;"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#. #-#-#-#-#  custom-nextpage.pot (Custom Nextpage 1.0.0)  #-#-#-#-#
+#. #-#-#-#-#  custom-nextpage.pot (Custom Nextpage 1.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/class-admin-menu.php:15
 msgid "Custom Nextpage"
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Convert to new options"
 msgstr ""
 
-#: includes/class-admin-menu.php:55 includes/class-admin-menu.php:308
+#: includes/class-admin-menu.php:55 includes/class-admin-menu.php:350
 msgid "Convert"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Setting initialization"
 msgstr ""
 
-#: includes/class-admin-menu.php:58 includes/class-admin-menu.php:329
+#: includes/class-admin-menu.php:58 includes/class-admin-menu.php:371
 msgid "Initialization"
 msgstr ""
 
@@ -85,50 +85,72 @@ msgid "After Text"
 msgstr ""
 
 #: includes/class-admin-menu.php:111
-msgid "The first and last page links displayed."
+msgid "Show all numbers"
 msgstr ""
 
-#: includes/class-admin-menu.php:123
-msgid "Next and previous page links to display."
+#: includes/class-admin-menu.php:122
+msgid "End size"
+msgstr ""
+
+#: includes/class-admin-menu.php:130
+msgid "How many numbers on either the start and the end list edges."
 msgstr ""
 
 #: includes/class-admin-menu.php:135
+msgid "Mid size"
+msgstr ""
+
+#: includes/class-admin-menu.php:143
+msgid ""
+"How many numbers to either side of current page, but not including current "
+"page."
+msgstr ""
+
+#: includes/class-admin-menu.php:148
+msgid "The first and last page links displayed."
+msgstr ""
+
+#: includes/class-admin-menu.php:160
+msgid "Next and previous page links to display."
+msgstr ""
+
+#: includes/class-admin-menu.php:172
 msgid "Text For First Page"
 msgstr ""
 
-#: includes/class-admin-menu.php:147
+#: includes/class-admin-menu.php:184
 msgid "Text For Last Page"
 msgstr ""
 
-#: includes/class-admin-menu.php:159
+#: includes/class-admin-menu.php:196
 msgid "Text For Next Page"
 msgstr ""
 
-#: includes/class-admin-menu.php:171
+#: includes/class-admin-menu.php:208
 msgid "Text For Previous Page"
 msgstr ""
 
-#: includes/class-admin-menu.php:183
+#: includes/class-admin-menu.php:220
 msgid "Style"
 msgstr ""
 
-#: includes/class-admin-menu.php:190
+#: includes/class-admin-menu.php:227
 msgid "Select Style type"
 msgstr ""
 
-#: includes/class-admin-menu.php:197
+#: includes/class-admin-menu.php:234
 msgid "Default"
 msgstr ""
 
-#: includes/class-admin-menu.php:198 includes/class-admin-menu.php:207
+#: includes/class-admin-menu.php:235 includes/class-admin-menu.php:244
 msgid "Style Edit"
 msgstr ""
 
-#: includes/class-admin-menu.php:199
+#: includes/class-admin-menu.php:236
 msgid "Disable"
 msgstr ""
 
-#: includes/class-admin-menu.php:215
+#: includes/class-admin-menu.php:252
 msgid ""
 "Press ctrl-space to activate autocompletion. <span class=\"button button-"
 "primary\" id=\"reset-css\">Reset</span>"

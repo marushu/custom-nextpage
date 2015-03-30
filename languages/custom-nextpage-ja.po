@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Nextpage 0.9.8\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/custom-nextpage\n"
-"POT-Creation-Date: 2014-10-03 04:12:45+00:00\n"
-"PO-Revision-Date: 2014-10-03 13:21+0900\n"
+"POT-Creation-Date: 2015-03-30 06:27:28+00:00\n"
+"PO-Revision-Date: 2015-03-30 15:28+0900\n"
 "Last-Translator: Webnist <webnist@webnist.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ja\n"
@@ -15,21 +15,21 @@ msgstr ""
 "X-Generator: Poedit 1.6.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: custom-nextpage.php:50 custom-nextpage.php:63
-#: includes/class-admin-menu.php:316
+#: custom-nextpage.php:53 custom-nextpage.php:69
+#: includes/class-admin-menu.php:358
 msgid "&#171;"
 msgstr "&#171;"
 
-#: custom-nextpage.php:51 custom-nextpage.php:64
-#: includes/class-admin-menu.php:315
+#: custom-nextpage.php:54 custom-nextpage.php:70
+#: includes/class-admin-menu.php:357
 msgid "&#187;"
 msgstr "&#187;"
 
-#: custom-nextpage.php:52 custom-nextpage.php:65
+#: custom-nextpage.php:55 custom-nextpage.php:71
 msgid "&gt;"
 msgstr "&gt;"
 
-#: custom-nextpage.php:53 custom-nextpage.php:66
+#: custom-nextpage.php:56 custom-nextpage.php:72
 msgid "&lt;"
 msgstr "&lt;"
 
@@ -58,7 +58,7 @@ msgstr "Custom Nextpage 設定"
 msgid "Convert to new options"
 msgstr "新しいオプションに変換します。"
 
-#: includes/class-admin-menu.php:55 includes/class-admin-menu.php:308
+#: includes/class-admin-menu.php:55 includes/class-admin-menu.php:350
 msgid "Convert"
 msgstr "コンバート"
 
@@ -66,7 +66,7 @@ msgstr "コンバート"
 msgid "Setting initialization"
 msgstr "設定の初期化"
 
-#: includes/class-admin-menu.php:58 includes/class-admin-menu.php:329
+#: includes/class-admin-menu.php:58 includes/class-admin-menu.php:371
 msgid "Initialization"
 msgstr "初期化"
 
@@ -87,50 +87,74 @@ msgid "After Text"
 msgstr "タイトルナビゲーションの後ろに入れるテキスト。"
 
 #: includes/class-admin-menu.php:111
+msgid "Show all numbers"
+msgstr "全て表示"
+
+#: includes/class-admin-menu.php:122
+msgid "End size"
+msgstr "End size"
+
+#: includes/class-admin-menu.php:130
+msgid "How many numbers on either the start and the end list edges."
+msgstr "ページ番号のリストの両端(最初と最後)にいくつの数字を表示するか。"
+
+#: includes/class-admin-menu.php:135
+msgid "Mid size"
+msgstr "Mid size"
+
+#: includes/class-admin-menu.php:143
+msgid ""
+"How many numbers to either side of current page, but not including current "
+"page."
+msgstr ""
+"現在のページの両側にいくつの数字を表示するか。ただし現在のページは含みませ"
+"ん。"
+
+#: includes/class-admin-menu.php:148
 msgid "The first and last page links displayed."
 msgstr "最初と最後のリンクを表示する"
 
-#: includes/class-admin-menu.php:123
+#: includes/class-admin-menu.php:160
 msgid "Next and previous page links to display."
 msgstr "次と前のリンクを表示する"
 
-#: includes/class-admin-menu.php:135
+#: includes/class-admin-menu.php:172
 msgid "Text For First Page"
 msgstr "最初のページリンクのテキスト"
 
-#: includes/class-admin-menu.php:147
+#: includes/class-admin-menu.php:184
 msgid "Text For Last Page"
 msgstr "最後のページリンクのテキスト"
 
-#: includes/class-admin-menu.php:159
+#: includes/class-admin-menu.php:196
 msgid "Text For Next Page"
 msgstr "次のページリンクのテキスト"
 
-#: includes/class-admin-menu.php:171
+#: includes/class-admin-menu.php:208
 msgid "Text For Previous Page"
 msgstr "前のページリンクのテキスト"
 
-#: includes/class-admin-menu.php:183
+#: includes/class-admin-menu.php:220
 msgid "Style"
 msgstr "スタイル"
 
-#: includes/class-admin-menu.php:190
+#: includes/class-admin-menu.php:227
 msgid "Select Style type"
 msgstr "スタイルの選択"
 
-#: includes/class-admin-menu.php:197
+#: includes/class-admin-menu.php:234
 msgid "Default"
 msgstr "デフォルト"
 
-#: includes/class-admin-menu.php:198 includes/class-admin-menu.php:207
+#: includes/class-admin-menu.php:235 includes/class-admin-menu.php:244
 msgid "Style Edit"
 msgstr "スタイル編集"
 
-#: includes/class-admin-menu.php:199
+#: includes/class-admin-menu.php:236
 msgid "Disable"
 msgstr "無効化"
 
-#: includes/class-admin-menu.php:215
+#: includes/class-admin-menu.php:252
 msgid ""
 "Press ctrl-space to activate autocompletion. <span class=\"button button-"
 "primary\" id=\"reset-css\">Reset</span>"
