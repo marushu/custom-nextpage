@@ -1,47 +1,50 @@
 === Custom Nextpage ===
 
-Contributors: Webnist,understandard
-Tags: nextpage multipage
-Requires at least: 3.6
-Tested up to: 4.0
-Version: 1.1.0
-License: GPLv2 or later
+Contributors: Webnist,understandard 
+Tags: nextpage multipage 
+Requires at least: 3.6 
+Tested up to: 4.2.2 
+Version: 1.1.1 
+License: GPLv2 or later 
 
 MultiPage is a customizable plugin
 
 == Description ==
 
-MultiPage is a customizable plugin.
+MultiPage is a customizable plugin. 
 You can add any title on the page.
 
 = Contributors =
 
-* [Webnist](https://profiles.wordpress.org/webnist)
+* [Webnist](https://profiles.wordpress.org/webnist) 
 * [understandard](https://profiles.wordpress.org/understandard/)
 
 == Installation ==
 
-* A plug-in installation screen is displayed on the WordPress admin panel.
-* It installs it in `wp-content/plugins`.
-* The plug-in is made effective.
+* A plug-in installation screen is displayed on the WordPress admin panel. 
+* It installs it in `wp-content/plugins`. 
+* The plug-in is made effective. 
 * Open \'Settings\' -> \'Custom Nextpage\' menu.
 
 == Screenshots ==
 
-1. Short code insertion button
-2. Title insertion form
-3. The title after you insert
+1. Short code insertion button 
+2. Title insertion form 
+3. The title after you insert 
 4. Next page appearance
 
 == Frequently Asked Questions ==
 
-Automatically replace the wp_link_pages. To check?
-Please insert a template.
-```
-<?php if ( function_exists( 'custom_next_page_link_pages' ) ) : custom_next_page_link_pages(); endif; ?>
-```
+Automatically replace the wp_link_pages. To check? 
+Please insert a template. 
+``` 
+<?php if ( function_exists( 'custom_next_page_link_pages' ) ) :  custom_next_page_link_pages(); endif; ?> 
+``` 
 
 == Changelog ==
+
+= 1.1.1 =
+Fixed bug: Quicktags
 
 = 1.1.0 =
 Add Grouping multiple pages

@@ -68,7 +68,7 @@ class CustomNextPageEditor extends CustomNextPageInit {
 	<?php }
 	// add more buttons to the html editor
 	function quicktags() {
-		if ( wp_script_is( 'quicktags' ) ) {
+		if ( ! wp_script_is( 'custom-nextpage-quicktags' ) ) {
 			wp_enqueue_script( 'custom-nextpage-quicktags', CUSTOM_NEXTPAGE_URL . '/js/quicktags.js', array('quicktags'), $this->version, true );
  ?>
 			<script type="text/javascript">

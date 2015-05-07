@@ -3,8 +3,8 @@
 Contributors: Webnist,understandard
 Tags: nextpage multipage
 Requires at least: 3.6
-Tested up to: 4.0
-Version: 1.1.0
+Tested up to: 4.2.2
+Version: 1.1.1
 License: GPLv2 or later
 
 MultiPage is a customizable plugin
@@ -41,6 +41,9 @@ Or the  Please insert a template.
 `<?php if ( function_exists( 'custom_next_page_link_pages' ) ) : custom_next_page_link_pages(); endif; ?>`
 
 == Changelog ==
+
+= 1.1.1 =
+Fixed bug: Quicktags
 
 = 1.1.0 =
 Add Grouping multiple pages
