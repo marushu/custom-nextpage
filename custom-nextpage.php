@@ -4,7 +4,7 @@ Plugin Name: Custom Nextpage
 Plugin URI: http://wordpress.org/plugins/custom-nextpage/
 Description: MultiPage is a customizable plugin. Can any title on the page.
 Author: Webnist
-Version: 1.1.1
+Version: 1.1.3
 Author URI: http://profiles.wordpress.org/webnist
 License: GPLv2 or later
 Text Domain: custom-nextpage
@@ -86,6 +86,7 @@ class CustomNextPage extends CustomNextPageInit {
 				add_filter( 'wp_link_pages', array( &$this, 'wp_link_pages' ) );
 			add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
 		}
+		add_filter( 'paginate_links', array( $this, 'paginate_links' ), 1 );
 		add_shortcode( 'nextpage', array( &$this, 'shortcode' ) );
 		load_plugin_textdomain( $this->domain, false, $this->plugin_basename . $this->langs );
 	}
@@ -180,6 +181,10 @@ class CustomNextPage extends CustomNextPageInit {
 			} else{
 				$p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
 			}
+			if ( is_preview() ) {
+				$p_base = get_permalink();
+				$p_base = $p_base . '&page=%_%&preview=true';
+			}
 			$nav_list = paginate_links(array(
 				'base'      => $p_base,
 				'format'    => $p_format,
@@ -218,6 +223,15 @@ class CustomNextPage extends CustomNextPageInit {
 		}
 		return $output;
 	}
+
+	public function paginate_links( $link ) {
+
+		if ( is_preview() )
+			$link = str_replace( '&page&', '&', $link );
+
+		return $link;
+	}
+
 
 	public function wp_enqueue_scripts() {
 		if ( 0 == $this->styletype ) {

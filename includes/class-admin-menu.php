@@ -260,7 +260,7 @@ class CustomNextPageAdmin extends CustomNextPageInit {
 		$id      = ! empty( $id ) ? $id : $name;
 		$desc    = ! empty( $desc ) ? $desc : '';
 		$class   = ! empty( $class ) ? $class: 'regular-text';
-		$output  = '<input type="text" name="' . $name .'" id="' . $id .'" class="' . $class . '" value="' . $value .'" />' . "\n";
+		$output  = '<input type="text" name="' . $name .'" id="' . $id .'" class="' . $class . '" value="' . esc_html( $value ) .'" />' . "\n";
 		if ( $desc )
 			$output .= '<p class="description">' . $desc . '</p>' . "\n";
 
