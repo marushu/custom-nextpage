@@ -23,6 +23,8 @@ if ( !class_exists('CustomNextPageAdmin') )
 if ( !class_exists('CustomNextPageEditor') )
 	require_once(dirname(__FILE__).'/includes/class-admin-editor.php');
 
+require_once dirname( __FILE__ ) . '/custom-next-page-block.php';
+
 class CustomNextPageInit {
 
 	public function __construct() {
